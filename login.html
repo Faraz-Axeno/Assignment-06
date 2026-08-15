@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Shop.co</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="top-banner">
+            <div class="top-banner__content">
+                <p class="top-banner__text">Sign up and get 20% off to your first order. <a href="#" class="top-banner__link">Sign Up Now</a></p>
+            </div>
+            <button class="top-banner__close" aria-label="Close banner">
+                <img src="images/cross.svg" alt="Close" class="top-banner__icon">
+            </button>
+        </div>
+
+        <div class="header__navbar">
+            <a href="index.html" class="header__logo">SHOP.CO</a>
+
+            <nav class="header__nav">
+                <a href="#" class="header__nav-link">Shop <img src="images/dropdown-image.svg" alt="Dropdown" class="header__nav-icon"></a>
+                <a href="#" class="header__nav-link">On Sale</a>
+                <a href="#" class="header__nav-link">New Arrivals</a>
+                <a href="#" class="header__nav-link">Brands</a>
+            </nav>
+
+            <div class="search-bar">
+                <img src="images/search.svg" alt="Search" class="search-bar__icon">
+                <input type="text" class="search-bar__input" placeholder="Search for products...">
+            </div>
+
+            <div class="header__actions">
+                <a href="cart.html" class="header__action-btn" aria-label="Cart"><img src="images/cart.svg" alt="Cart"></a>
+                <a href="login.html" class="header__action-btn" aria-label="Profile"><img src="images/profile.svg" alt="Profile"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html" class="breadcrumb__link">Home</a> &gt; 
+            <span class="breadcrumb__current" aria-current="page">Login</span>
+        </nav>
+
+        <section class="login">
+            <div class="login__container">
+                <h1 class="login__title">Welcome Back</h1>
+                <p class="login__subtitle">Please enter your details to sign in.</p>
+                
+                <form class="login__form" id="login-form">
+                    <div class="login__error" id="login-error-message"></div>
+                    
+                    <div class="login__form-group">
+                        <label for="email" class="login__label">Email Address</label>
+                        <input type="email" id="email" class="login__input" placeholder="admin@example.com" required>
+                    </div>
+                    
+                    <div class="login__form-group">
+                        <label for="password" class="login__label">Password</label>
+                        <input type="password" id="password" class="login__input" placeholder="Enter your password" required>
+                    </div>
+                    
+                    <button type="submit" class="login__btn" id="login-btn">Log In</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="newsletter">
+            <div class="newsletter__content">
+                <h2 class="newsletter__title">STAY UPTO DATE ABOUT<br>OUR LATEST OFFERS</h2>
+                <form class="newsletter__form">
+                    <div class="newsletter__input-group">
+                        <img src="images/email-icon.svg" alt="Email Icon" class="newsletter__icon">
+                        <input type="email" class="newsletter__input" placeholder="Enter your email address" required>
+                    </div>
+                    <button type="submit" class="newsletter__btn">Subscribe to Newsletter</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer__main">
+            <div class="footer__col footer__col--brand">
+                <h3 class="footer__logo">SHOP.CO</h3>
+                <p class="footer__desc">We have clothes that suits your style and which you're proud to wear. From women to men.</p>
+                <div class="social-links">
+                    <a href="#" class="social-links__item"><img src="images/twitter.svg" alt="Twitter"></a>
+                    <a href="#" class="social-links__item"><img src="images/facebook.svg" alt="Facebook"></a>
+                    <a href="#" class="social-links__item"><img src="images/instagram.svg" alt="Instagram"></a>
+                    <a href="#" class="social-links__item"><img src="images/github.svg" alt="Github"></a>
+                </div>
+            </div>
+
+            <div class="footer__col">
+                <h4 class="footer__heading">COMPANY</h4>
+                <ul class="footer__list">
+                    <li class="footer__list-item"><a href="#" class="footer__link">About</a></li>
+                    <li class="footer__list-item"><a href="#" class="footer__link">Features</a></li>
+                    <li class="footer__list-item"><a href="#" class="footer__link">Works</a></li>
+                    <li class="footer__list-item"><a href="#" class="footer__link">Career</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__col">
+                <h4 class="footer__heading">HELP</h4>
+                <ul class="footer__list">
+                    <li class="footer__list-item"><a href="#" class="footer__link">Customer Support</a></li>
+                    <li class="footer__list-item"><a href="#" class="footer__link">Delivery Details</a></li>
+                    <li class="footer__list-item"><a href="#" class="footer__link">Terms & Conditions</a></li>
+                    <li class="footer__list-item"><a href="#" class="footer__link">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__col">
+                <h4 class="footer__heading">FAQ</h4>
+                <ul class="footer__list">
+                    <li class="footer__list-item"><a href="#" class="footer__link">Account</a></li>
+                    <li class="footer__list-item"><a href="#" class="footer__link">Manage Deliveries</a></li>
+                    <li class="footer__list-item"><a href="#" class="footer__link">Orders</a></li>
+                    <li class="footer__list-item"><a href="#" class="footer__link">Payments</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__col">
+                <h4 class="footer__heading">RESOURCES</h4>
+                <ul class="footer__list">
+                    <li class="footer__list-item"><a href="#" class="footer__link">Free eBooks</a></li>
+                    <li class="footer__list-item"><a href="#" class="footer__link">Development Tutorial</a></li>
+                    <li class="footer__list-item"><a href="#" class="footer__link">How to - Blog</a></li>
+                    <li class="footer__list-item"><a href="#" class="footer__link">Youtube Playlist</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer__bottom">
+            <p class="footer__copyright">Shop.co © 2000-2023, All Rights Reserved</p>
+            <div class="payment-methods">
+                <img src="images/Visa.svg" alt="Visa" class="payment-methods__icon">
+                <img src="images/mastercard.svg" alt="Mastercard" class="payment-methods__icon">
+                <img src="images/PayPal.svg" alt="Paypal" class="payment-methods__icon">
+                <img src="images/ApplePay.svg" alt="Apple Pay" class="payment-methods__icon">
+                <img src="images/GPay.svg" alt="Google Pay" class="payment-methods__icon">
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
