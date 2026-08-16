@@ -4,55 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop.co Header</title>
+    <title>Shop.co</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-    <header>
-        <div class="Header-top">
-            <div class="top-text">
-                <p>Sign up and get 20% off to your first order. <a href="#">Sign Up Now</a></p>
-            </div>
-            <button class="close-btn">
-                <img src="images/cross.svg" alt="Close" class="icon-small">
+    <header class="header">
+    <div class="top-banner">
+        <div class="top-banner__content">
+            <p>Sign up and get 20% off to your first order. <a href="#" class="top-banner__link">Sign Up Now</a></p>
+        </div>
+        <button class="top-banner__close" aria-label="Close banner">
+            <img src="images/cross.svg" alt="Close" class="top-banner__icon">
+        </button>
+    </div>
+    
+    <div class="header__navbar">
+        <button class="header__hamburger" id="hamburger-btn" aria-label="Open menu">
+            <img src="images/Hamurger.svg" alt="Menu">
+        </button>
+
+        <a href="index.html" class="header__logo">SHOP.CO</a>
+
+        <nav class="header__nav" id="header-nav">
+            <a href="#" class="header__nav-link">Shop <img src="images/dropdown-image.svg" alt="Dropdown" class="header__nav-icon"></a>
+            <a href="#" class="header__nav-link">On Sale</a>
+            <a href="#" class="header__nav-link">New Arrivals</a>
+            <a href="#" class="header__nav-link">Brands</a>
+        </nav>
+
+        <div class="search-bar">
+            <img src="images/search.svg" alt="Search" class="search-bar__icon">
+            <input type="text" class="search-bar__input" placeholder="Search for products...">
+        </div>
+
+        <div class="header__actions">
+            <button class="header__action-btn header__action-btn--search-mobile" aria-label="Search">
+                <img src="images/search.svg" alt="Search">
             </button>
+            <a href="cart.html" class="header__action-btn" aria-label="Cart">
+                <img src="images/cart.svg" alt="Cart">
+            </a>
+            <a href="login.html" class="header__action-btn" aria-label="Profile">
+                <img src="images/profile.svg" alt="Profile">
+            </a>
         </div>
-        <div class="navbar">
-            <p class="nav-shop-text">
-                SHOP.CO
-            </p>
+    </div>
+</header>
 
-            <nav class="nav-link">
-                <!-- Added a class to the dropdown icon to control its size specifically -->
-                <a href="#">Shop <img src="images/dropdown-image.svg" alt="Dropdown" class="icon-tiny"></a>
-                <a href="#">On Sale</a>
-                <a href="#">New Arrivals</a>
-                <a href="#">Brands</a>
-            </nav>
+    <main class="main-content">
+        <section class="home-hero">
+            <div class="hero-container">
+                <img src="images/star.svg" alt="Star" class="star-icon star-small">
+                <img src="images/star.svg" alt="Star" class="star-icon star-large">
 
-            <div class="search-bar">
-                <img src="images/search.svg" alt="Search" class="icon-normal">
-                <input type="text" placeholder="Search for products...">
-            </div>
-
-            <div class="nav-icons">
-                <a href="#"><img src="images/cart.svg" alt="Cart" class="icon-normal"></a>
-                <a href="#"><img src="images/profile.svg" alt="Profile" class="icon-normal"></a>
-            </div>
-        </div>
-    </header>
-    <main>
-
-        <section class="hero">
-            <div class="container hero-container">
-                <img src="/images/star.svg" alt="Star" class="star-icon star-small">
-                <img src="/images/star.svg" alt="Star" class="star-icon star-large">
                 <div class="hero-content-left">
                     <h1>FIND CLOTHES<br>THAT MATCHES<br>YOUR STYLE</h1>
-                    <p>Browse through our diverse range of meticulously crafted garments, designed <br> to bring out
-                        your individuality and cater to your sense of style.</p>
-                    <button class="shop-now">Shop Now</button>
+                    <p>Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
+                    
+                    <button class="btn-primary hero-btn">Shop Now</button>
+                    
                     <div class="stats-container">
                         <div class="stat-item">
                             <h2 class="stat-number">200+</h2>
@@ -68,160 +79,191 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="hero-content-right">
-                    <img class="hero-image" src="/images/Hero-couple.jpg" alt="Hero Couple Image">
+                    <img class="hero-image" src="images/Hero-couple.jpg" alt="Hero Couple Image">
                 </div>
-
             </div>
         </section>
 
         <section class="Brands-Name">
-            <div class="Name" style="background-color: black;">
-                <img src="images/VERSACE.png" alt="Versace-logo">
-                <img src="images/zara-logo-1.png" alt="zara-logo">
-                <img src="images/gucci-logo-1.png" alt="gucci-logo">
-                <img src="images/prada-logo-1.png" alt="prada-logo">
+            <div class="Name">
+                <img src="images/VERSACE.png" alt="Versace">
+                <img src="images/zara-logo-1.png" alt="Zara">
+                <img src="images/gucci-logo-1.png" alt="Gucci">
+                <img src="images/prada-logo-1.png" alt="Prada">
                 <img src="images/Calvin Klein.png" alt="Calvin Klein">
             </div>
         </section>
 
         <section class="new-arrivals-section">
-            <h2 class="section-title">NEW ARRIVALS</h2>
-            <div class="product-grid" id="new-arrivals-grid"></div>
-            <div class="button-container">
-                <button class="view-all-btn">View All</button>
+            <div class="header__container">
+                <h2 class="section-title">NEW ARRIVALS</h2>
+                <div class="product-grid" id="new-arrivals-grid"></div>
+                <div class="button-container">
+                    <button class="btn-primary">View All</button>
+                </div>
             </div>
         </section>
 
-        <hr>
+        <hr class="divider">
 
         <section class="top-selling-section">
-            <h2 class="section-title">TOP SELLING</h2>
-            <div class="product-grid" id="top-selling-grid"></div>
-            <div class="button-container">
-                <button class="view-all-btn">View All</button>
+            <div class="header__container">
+                <h2 class="section-title">TOP SELLING</h2>
+                <div class="product-grid" id="top-selling-grid"></div>
+                <div class="button-container">
+                    <button class="btn-primary">View All</button>
+                </div>
             </div>
         </section>
 
-        <section class="Browse-Dress-Style">
-            <div class="Style-Cards">
-            <h2>BROWSE BY DRESS STYLE</h2>
-            <div class="card-1">
-                <img src="images/Casual.png" alt="">
+        <section class="dress-style">
+            <div class="dress-style__container">
+                <h2 class="dress-style__title">BROWSE BY DRESS STYLE</h2>
+                <div class="dress-style__grid">
+                    <a href="#" class="style-card style-card--casual">
+                        <img src="images/Casual.png" alt="Casual" class="style-card__image">
+                    </a>
+                    <a href="#" class="style-card style-card--formal">
+                        <img src="images/Formal.png" alt="Formal" class="style-card__image">
+                    </a>
+                    <a href="#" class="style-card style-card--party">
+                        <img src="images/Party.png" alt="Party" class="style-card__image">
+                    </a>
+                    <a href="#" class="style-card style-card--gym">
+                        <img src="images/GYM.png" alt="Gym" class="style-card__image">
+                    </a>
+                </div>
             </div>
-            <div class="card-2">
-                <img src="images/Formal.png" alt="">
-            </div>
-            <div class="card-3">
-                <img src="images/Party.png" alt="">
-            </div>
-            <div class="card-4">
-                <img src="images/GYM.png" alt="">
-            </div>
-
-          </div>
         </section>
 
-        <!-- Updated Testimonials Section -->
-        <section class="testimonials-section">
-            <div class="container testimonials-container">
-                
-                <!-- Section Header (Title and Arrows) -->
-                <div class="reviews-header">
-                    <h2 class="reviews-title">OUR HAPPY CUSTOMERS</h2>
-                    
-                    <div class="reviews-nav">
-                        <button class="nav-arrow prev-arrow" aria-label="Previous">
-                            <img src="images/arrow-down-bold 2.svg" alt="Previous">
-                        </button>
-                        <button class="nav-arrow next-arrow" aria-label="Next">
-                            <img src="images/arrow-down-bold 1.svg" alt="Next">
-                        </button>
-                    </div>
-                </div>
-                <div class="reviews-list">
-                </div>
+<section class="testimonials">
+    <div class="testimonials__container">
+        <div class="testimonials__header">
+            <h2 class="testimonials__title">OUR HAPPY CUSTOMERS</h2>
+            <div class="testimonials__nav">
+                <button class="testimonials__arrow" aria-label="Previous">
+                    <img src="images/arrow-down-bold 2.svg" alt="Left">
+                </button>
+                <button class="testimonials__arrow" aria-label="Next">
+                    <img src="images/arrow-down-bold 1.svg" alt="Right">
+                </button>
+            </div>
+        </div>
         
+        <div class="testimonials__carousel">
+            <div class="testimonials__grid" id="testimonials-grid">
+                
+                <article class="review-card testimonials__card">
+                    <div class="review-card__stars">★★★★★</div>
+                    <div class="review-card__user">
+                        <h4 class="review-card__name">Sarah M.</h4>
+                        <img src="images/verified.svg" alt="Verified" class="review-card__verified-icon">
+                    </div>
+                    <p class="review-card__text">"I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations."</p>
+                </article>
+
+                <article class="review-card testimonials__card">
+                    <div class="review-card__stars">★★★★★</div>
+                    <div class="review-card__user">
+                        <h4 class="review-card__name">Alex K.</h4>
+                        <img src="images/verified.svg" alt="Verified" class="review-card__verified-icon">
+                    </div>
+                    <p class="review-card__text">"Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions."</p>
+                </article>
+
+                <article class="review-card testimonials__card">
+                    <div class="review-card__stars">★★★★★</div>
+                    <div class="review-card__user">
+                        <h4 class="review-card__name">James L.</h4>
+                        <img src="images/verified.svg" alt="Verified" class="review-card__verified-icon">
+                    </div>
+                    <p class="review-card__text">"As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends."</p>
+                </article>
+
             </div>
-        </section>
+        </div>
+    </div>
+</section>
     </main>
 
-    <footer>
-    <div class="newsletter-container">
-        <div class="newsletter-content">
-            <h2>STAY UPTO DATE ABOUT<br>OUR LATEST OFFERS</h2>
-            <div class="newsletter-form">
-                <div class="input-group">
-                    <img src="images/email-icon.svg" alt="Email Icon" class="icon-normal">
-                    <input type="email" placeholder="Enter your email address">
+    <footer class="footer">
+        <div class="newsletter">
+            <h2 class="newsletter__title">STAY UPTO DATE ABOUT OUR LATEST OFFERS</h2>
+            <div class="newsletter__form">
+                <div class="newsletter__input-group">
+                    <img src="images/email-icon.svg" alt="Email Icon" class="newsletter__icon">
+                    <input type="email" class="newsletter__input" placeholder="Enter your email address">
                 </div>
-                <button class="subscribe-btn">Subscribe to Newsletter</button>
-            </div>
-        </div>
-    </div>
-    <div class="footer-main">
-        <div class="footer-col brand-col">
-            <h3 class="footer-logo">SHOP.CO</h3>
-            <p class="footer-desc">We have clothes that suits your style and which you're proud to wear. From women to men.</p>
-            <div class="social-icons">
-                <a href="#"><img src="images/twitter.svg" alt="Twitter"></a>
-                <a href="#"><img src="images/facebook.svg" alt="Facebook"></a>
-                <a href="#"><img src="images/instagram.svg" alt="Instagram"></a>
-                <a href="#"><img src="images/github.svg" alt="Github"></a>
+                <button class="newsletter__btn">Subscribe to Newsletter</button>
             </div>
         </div>
 
-        <div class="footer-col">
-            <h4>COMPANY</h4>
-            <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Works</a></li>
-                <li><a href="#">Career</a></li>
-            </ul>
+        <div class="footer__main">
+            <div class="footer__col footer__col--brand">
+                <h3 class="footer__logo">SHOP.CO</h3>
+                <p class="footer__desc">We have clothes that suits your style and which you're proud to wear. From women to men.</p>
+                <div class="social-links">
+                    <a href="#" class="social-links__item"><img src="images/twitter.svg" alt="Twitter"></a>
+                    <a href="#" class="social-links__item"><img src="images/facebook.svg" alt="Facebook"></a>
+                    <a href="#" class="social-links__item"><img src="images/instagram.svg" alt="Instagram"></a>
+                    <a href="#" class="social-links__item"><img src="images/github.svg" alt="Github"></a>
+                </div>
+            </div>
+
+            <div class="footer__col">
+                <h4 class="footer__heading">COMPANY</h4>
+                <ul class="footer__list">
+                    <li><a href="#" class="footer__link">About</a></li>
+                    <li><a href="#" class="footer__link">Features</a></li>
+                    <li><a href="#" class="footer__link">Works</a></li>
+                    <li><a href="#" class="footer__link">Career</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__col">
+                <h4 class="footer__heading">HELP</h4>
+                <ul class="footer__list">
+                    <li><a href="#" class="footer__link">Customer Support</a></li>
+                    <li><a href="#" class="footer__link">Delivery Details</a></li>
+                    <li><a href="#" class="footer__link">Terms & Conditions</a></li>
+                    <li><a href="#" class="footer__link">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__col">
+                <h4 class="footer__heading">FAQ</h4>
+                <ul class="footer__list">
+                    <li><a href="#" class="footer__link">Account</a></li>
+                    <li><a href="#" class="footer__link">Manage Deliveries</a></li>
+                    <li><a href="#" class="footer__link">Orders</a></li>
+                    <li><a href="#" class="footer__link">Payments</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__col">
+                <h4 class="footer__heading">RESOURCES</h4>
+                <ul class="footer__list">
+                    <li><a href="#" class="footer__link">Free eBooks</a></li>
+                    <li><a href="#" class="footer__link">Development Tutorial</a></li>
+                    <li><a href="#" class="footer__link">How to - Blog</a></li>
+                    <li><a href="#" class="footer__link">Youtube Playlist</a></li>
+                </ul>
+            </div>
         </div>
 
-        <div class="footer-col">
-            <h4>HELP</h4>
-            <ul>
-                <li><a href="#">Customer Support</a></li>
-                <li><a href="#">Delivery Details</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-            </ul>
+        <div class="footer__bottom">
+            <p class="footer__copyright">Shop.co © 2000-2026, All Rights Reserved</p>
+            <div class="payment-methods">
+                <img src="images/Visa.svg" alt="Visa" class="payment-methods__icon">
+                <img src="images/mastercard.svg" alt="Mastercard" class="payment-methods__icon">
+                <img src="images/PayPal.svg" alt="Paypal" class="payment-methods__icon">
+                <img src="images/ApplePay.svg" alt="Apple Pay" class="payment-methods__icon">
+                <img src="images/GPay.svg" alt="Google Pay" class="payment-methods__icon">
+            </div>
         </div>
-
-        <div class="footer-col">
-            <h4>FAQ</h4>
-            <ul>
-                <li><a href="#">Account</a></li>
-                <li><a href="#">Manage Deliveries</a></li>
-                <li><a href="#">Orders</a></li>
-                <li><a href="#">Payments</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-col">
-            <h4>RESOURCES</h4>
-            <ul>
-                <li><a href="#">Free eBooks</a></li>
-                <li><a href="#">Development Tutorial</a></li>
-                <li><a href="#">How to - Blog</a></li>
-                <li><a href="#">Youtube Playlist</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>Shop.co © 2000-2023, All Rights Reserved</p>
-        <div class="payment-icons">
-            <img src="images/Visa.svg" alt="Visa">
-            <img src="images/mastercard.svg" alt="Mastercard">
-            <img src="images/PayPal.svg" alt="Paypal">
-            <img src="images/ApplePay.svg" alt="Apple Pay">
-            <img src="images/GPay.svg" alt="Google Pay">
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <script src="js/auth.js"></script>
     <script src="js/products.js"></script>

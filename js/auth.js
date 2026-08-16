@@ -1,52 +1,54 @@
-// const VALID_EMAIL = 'admin@example.com';
-// const VALID_PASSWORD = 'Admin@123';
-
-// const protectedPages = ['product.html', 'cart.html'];
-
-// const currentPage = window.location.pathname.split('/').pop();
-
-// if (protectedPages.includes(currentPage)) {
-//     const isLoggedIn = localStorage.getItem('isAuthenticated');
+document.addEventListener('DOMContentLoaded', () => {
+    const currentPath = window.location.pathname.toLowerCase();
+    const isProtectedPage = currentPath.includes('product.html') || currentPath.includes('cart.html');
     
-//     if (isLoggedIn !== 'true') {
-//         window.location.href = 'login.html';
-//     }
-// }
+    const isLoggedIn = localStorage.getItem('authState') === 'logged_in';
 
-// if (currentPage === 'login.html' && localStorage.getItem('isAuthenticated') === 'true') {
-//     window.location.href = 'index.html';
-// }
+    if (isProtectedPage && !isLoggedIn) {
+        window.location.href = 'login.html';
+        return; 
+    }
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     const loginForm = document.getElementById('login-form');
+    const profileLink = document.querySelector('.header__action-btn[href="login.html"]');
     
-//     if (loginForm) {
-//         loginForm.addEventListener('submit', function(event) {
-//             event.preventDefault();
+    if (profileLink && isLoggedIn) {
+        profileLink.href = '#'; 
+        profileLink.title = 'Logout';
+        
+        profileLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            localStorage.removeItem('authState');
+            window.location.href = 'index.html'; 
+        });
+    }
+
+    const loginForm = document.querySelector('.auth-form');
+    
+    if (loginForm) {
+        const errorMsg = document.createElement('p');
+        errorMsg.style.color = '#FF3333';
+        errorMsg.style.fontSize = '14px';
+        errorMsg.style.display = 'none';
+        errorMsg.style.marginBottom = '16px';
+        errorMsg.style.textAlign = 'center';
+        
+        const submitBtn = document.querySelector('.auth-form__submit');
+        loginForm.insertBefore(errorMsg, submitBtn);
+
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
             
-//             const emailInput = document.getElementById('email').value.trim();
-//             const passwordInput = document.getElementById('password').value.trim();
-//             const errorMessage = document.getElementById('login-error-message');
-            
-//             if (emailInput === VALID_EMAIL && passwordInput === VALID_PASSWORD) {
-//                 localStorage.setItem('isAuthenticated', 'true');
-//                 window.location.href = 'index.html';
-//             } else {
-//                 errorMessage.textContent = 'Invalid email or password. Please try again.';
-//                 errorMessage.style.color = '#ff3333';
-//                 errorMessage.style.marginBottom = '15px';
-//                 errorMessage.style.fontSize = '14px';
-//             }
-//         });
-//     }
+            const emailInput = document.getElementById('email').value;
+            const passwordInput = document.getElementById('password').value;
 
-//     const logoutButtons = document.querySelectorAll('.logout-btn');
-    
-//     logoutButtons.forEach(button => {
-//         button.addEventListener('click', (event) => {
-//             event.preventDefault();
-//             localStorage.removeItem('isAuthenticated');
-//             window.location.href = 'login.html';
-//         });
-//     });
-// });
+            if (emailInput === 'admin@example.com' && passwordInput === 'Admin@123') {
+                localStorage.setItem('authState', 'logged_in');
+                errorMsg.style.display = 'none';
+                window.location.href = 'index.html';
+            } else {
+                errorMsg.textContent = 'Invalid email or password. Please try again.';
+                errorMsg.style.display = 'block';
+            }
+        });
+    }
+});

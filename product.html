@@ -9,36 +9,43 @@
 <body>
     
     <header class="header">
-        <div class="top-banner">
-            <div class="top-banner__content">
-                <p class="top-banner__text">Sign up and get 20% off to your first order. <a href="#" class="top-banner__link">Sign Up Now</a></p>
-            </div>
-            <button class="top-banner__close" aria-label="Close banner">
-                <img src="images/cross.svg" alt="Close" class="top-banner__icon">
+    <div class="top-banner">
+        <div class="top-banner__content">
+            <p class="top-banner__text">Sign up and get 20% off to your first order. <a href="#" class="top-banner__link">Sign Up Now</a></p>
+        </div>
+        <button class="top-banner__close" aria-label="Close banner">
+            <img src="images/cross.svg" alt="Close" class="top-banner__icon">
+        </button>
+    </div>
+
+    <div class="header__navbar">
+        <button class="header__hamburger" id="hamburger-btn" aria-label="Open navigation menu">
+            <img src="images/Hamurger.svg" alt="Menu">
+        </button>
+
+        <a href="index.html" class="header__logo">SHOP.CO</a>
+
+        <nav class="header__nav" id="header-nav">
+            <a href="#" class="header__nav-link">Shop <img src="images/dropdown-image.svg" alt="Dropdown" class="header__nav-icon"></a>
+            <a href="#" class="header__nav-link">On Sale</a>
+            <a href="#" class="header__nav-link">New Arrivals</a>
+            <a href="#" class="header__nav-link">Brands</a>
+        </nav>
+
+        <div class="search-bar">
+            <img src="images/search.svg" alt="Search" class="search-bar__icon">
+            <input type="text" class="search-bar__input" placeholder="Search for products...">
+        </div>
+
+        <div class="header__actions">
+            <button class="header__action-btn header__action-btn--search-mobile" aria-label="Search">
+                <img src="images/search.svg" alt="Search">
             </button>
+            <a href="cart.html" class="header__action-btn" aria-label="Cart"><img src="images/cart.svg" alt="Cart"></a>
+            <a href="login.html" class="header__action-btn" aria-label="Profile"><img src="images/profile.svg" alt="Profile"></a>
         </div>
-
-        <div class="header__navbar">
-            <a href="index.html" class="header__logo">SHOP.CO</a>
-
-            <nav class="header__nav">
-                <a href="#" class="header__nav-link">Shop <img src="images/dropdown-image.svg" alt="Dropdown" class="header__nav-icon"></a>
-                <a href="#" class="header__nav-link">On Sale</a>
-                <a href="#" class="header__nav-link">New Arrivals</a>
-                <a href="#" class="header__nav-link">Brands</a>
-            </nav>
-
-            <div class="search-bar">
-                <img src="images/search.svg" alt="Search" class="search-bar__icon">
-                <input type="text" class="search-bar__input" placeholder="Search for products...">
-            </div>
-
-            <div class="header__actions">
-                <a href="cart.html" class="header__action-btn" aria-label="Cart"><img src="images/cart.svg" alt="Cart"></a>
-                <a href="profile.html" class="header__action-btn" aria-label="Profile"><img src="images/profile.svg" alt="Profile"></a>
-            </div>
-        </div>
-    </header>
+    </div>
+</header>
 
     <main class="main-content">
         <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -53,18 +60,18 @@
                 <div class="product__gallery">
                     <div class="product__thumbnails">
                         <button class="product__thumbnail-btn product__thumbnail-btn--active">
-                            <img src="images/tshirt-front.png" alt="Front view" id="thumbnail-1">
+                            <img src="images/product-1.png" alt="Front view" id="thumbnail-1">
                         </button>
                         <button class="product__thumbnail-btn">
-                            <img src="images/tshirt-back.png" alt="Back view" id="thumbnail-2">
+                            <img src="images/product-1.png" alt="Back view" id="thumbnail-2">
                         </button>
                         <button class="product__thumbnail-btn">
-                            <img src="images/tshirt-model.png" alt="Model wearing shirt" id="thumbnail-3">
+                            <img src="images/product-1.png" alt="Model wearing shirt" id="thumbnail-3">
                         </button>
                     </div>
                     
                     <div class="product__main-image">
-                        <img src="images/tshirt-main.png" alt="Product Main View" id="main-product-image">
+                        <img src="images/product-1.png" alt="Product Main View" id="main-product-image">
                     </div>
                 </div>
 
@@ -263,7 +270,7 @@
                 
                 <article class="product-card">
                     <div class="product-card__image-container">
-                        <img src="images/polo-blue.png" alt="Polo with Contrast Trims" class="product-card__image">
+                        <img src="images/product-5.png" alt="Polo with Contrast Trims" class="product-card__image">
                     </div>
                     <h3 class="product-card__title">Polo with Contrast Trims</h3>
                     <div class="product-card__rating">
@@ -279,7 +286,7 @@
 
                 <article class="product-card">
                     <div class="product-card__image-container">
-                        <img src="images/tshirt-gradient.png" alt="Gradient Graphic T-shirt" class="product-card__image">
+                        <img src="images/product-6.png" alt="Gradient Graphic T-shirt" class="product-card__image">
                     </div>
                     <h3 class="product-card__title">Gradient Graphic T-shirt</h3>
                     <div class="product-card__rating">
@@ -293,7 +300,7 @@
 
                 <article class="product-card">
                     <div class="product-card__image-container">
-                        <img src="images/polo-pink.png" alt="Polo with Tipping Details" class="product-card__image">
+                        <img src="images/product-7.png" alt="Polo with Tipping Details" class="product-card__image">
                     </div>
                     <h3 class="product-card__title">Polo with Tipping Details</h3>
                     <div class="product-card__rating">
@@ -307,7 +314,7 @@
 
                 <article class="product-card">
                     <div class="product-card__image-container">
-                        <img src="images/tshirt-striped.png" alt="Black Striped T-shirt" class="product-card__image">
+                        <img src="images/product-8.png" alt="Black Striped T-shirt" class="product-card__image">
                     </div>
                     <h3 class="product-card__title">Black Striped T-shirt</h3>
                     <div class="product-card__rating">
@@ -327,18 +334,16 @@
 
     <footer class="footer">
         <div class="newsletter">
-            <div class="newsletter__content">
-                <h2 class="newsletter__title">STAY UPTO DATE ABOUT<br>OUR LATEST OFFERS</h2>
-                <form class="newsletter__form">
-                    <div class="newsletter__input-group">
-                        <img src="images/email-icon.svg" alt="Email Icon" class="newsletter__icon">
-                        <input type="email" class="newsletter__input" placeholder="Enter your email address" required>
-                    </div>
-                    <button type="submit" class="newsletter__btn">Subscribe to Newsletter</button>
-                </form>
+            <h2 class="newsletter__title">STAY UPTO DATE ABOUT OUR LATEST OFFERS</h2>
+            <div class="newsletter__form">
+                <div class="newsletter__input-group">
+                    <img src="images/email-icon.svg" alt="Email Icon" class="newsletter__icon">
+                    <input type="email" class="newsletter__input" placeholder="Enter your email address">
+                </div>
+                <button class="newsletter__btn">Subscribe to Newsletter</button>
             </div>
         </div>
-        
+
         <div class="footer__main">
             <div class="footer__col footer__col--brand">
                 <h3 class="footer__logo">SHOP.CO</h3>
@@ -354,44 +359,44 @@
             <div class="footer__col">
                 <h4 class="footer__heading">COMPANY</h4>
                 <ul class="footer__list">
-                    <li class="footer__list-item"><a href="#" class="footer__link">About</a></li>
-                    <li class="footer__list-item"><a href="#" class="footer__link">Features</a></li>
-                    <li class="footer__list-item"><a href="#" class="footer__link">Works</a></li>
-                    <li class="footer__list-item"><a href="#" class="footer__link">Career</a></li>
+                    <li><a href="#" class="footer__link">About</a></li>
+                    <li><a href="#" class="footer__link">Features</a></li>
+                    <li><a href="#" class="footer__link">Works</a></li>
+                    <li><a href="#" class="footer__link">Career</a></li>
                 </ul>
             </div>
 
             <div class="footer__col">
                 <h4 class="footer__heading">HELP</h4>
                 <ul class="footer__list">
-                    <li class="footer__list-item"><a href="#" class="footer__link">Customer Support</a></li>
-                    <li class="footer__list-item"><a href="#" class="footer__link">Delivery Details</a></li>
-                    <li class="footer__list-item"><a href="#" class="footer__link">Terms & Conditions</a></li>
-                    <li class="footer__list-item"><a href="#" class="footer__link">Privacy Policy</a></li>
+                    <li><a href="#" class="footer__link">Customer Support</a></li>
+                    <li><a href="#" class="footer__link">Delivery Details</a></li>
+                    <li><a href="#" class="footer__link">Terms & Conditions</a></li>
+                    <li><a href="#" class="footer__link">Privacy Policy</a></li>
                 </ul>
             </div>
 
             <div class="footer__col">
                 <h4 class="footer__heading">FAQ</h4>
                 <ul class="footer__list">
-                    <li class="footer__list-item"><a href="#" class="footer__link">Account</a></li>
-                    <li class="footer__list-item"><a href="#" class="footer__link">Manage Deliveries</a></li>
-                    <li class="footer__list-item"><a href="#" class="footer__link">Orders</a></li>
-                    <li class="footer__list-item"><a href="#" class="footer__link">Payments</a></li>
+                    <li><a href="#" class="footer__link">Account</a></li>
+                    <li><a href="#" class="footer__link">Manage Deliveries</a></li>
+                    <li><a href="#" class="footer__link">Orders</a></li>
+                    <li><a href="#" class="footer__link">Payments</a></li>
                 </ul>
             </div>
 
             <div class="footer__col">
                 <h4 class="footer__heading">RESOURCES</h4>
                 <ul class="footer__list">
-                    <li class="footer__list-item"><a href="#" class="footer__link">Free eBooks</a></li>
-                    <li class="footer__list-item"><a href="#" class="footer__link">Development Tutorial</a></li>
-                    <li class="footer__list-item"><a href="#" class="footer__link">How to - Blog</a></li>
-                    <li class="footer__list-item"><a href="#" class="footer__link">Youtube Playlist</a></li>
+                    <li><a href="#" class="footer__link">Free eBooks</a></li>
+                    <li><a href="#" class="footer__link">Development Tutorial</a></li>
+                    <li><a href="#" class="footer__link">How to - Blog</a></li>
+                    <li><a href="#" class="footer__link">Youtube Playlist</a></li>
                 </ul>
             </div>
         </div>
-        
+
         <div class="footer__bottom">
             <p class="footer__copyright">Shop.co © 2000-2023, All Rights Reserved</p>
             <div class="payment-methods">
@@ -404,7 +409,9 @@
         </div>
     </footer>
      
+    <script src="js/products.js"></script>
     <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/product-details.js"></script>
 </body>
 </html>
