@@ -4,42 +4,47 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const isLoggedIn = localStorage.getItem('authState') === 'logged_in';
 
+    // 1. ROUTE GUARDING FOR PROTECTED PAGES
     if (isProtectedPage && !isLoggedIn) {
         window.location.href = 'login.html';
         return; 
     }
 
-    const profileLink = document.querySelector('.header__action-btn[href="login.html"]');
-    
+    const profileLink = document.querySelector('a.header__action-btn[href="login.html"], .header__action-btn[aria-label="Profile"]'); 
     if (profileLink && isLoggedIn) {
-        profileLink.href = '#'; 
         profileLink.title = 'Logout';
+        profileLink.setAttribute('aria-label', 'Logout');
         
         profileLink.addEventListener('click', (e) => {
             e.preventDefault();
+
             localStorage.removeItem('authState');
-            window.location.href = 'index.html'; 
+            window.location.href = 'login.html';
         });
     }
 
     const loginForm = document.querySelector('.auth-form');
     
     if (loginForm) {
-        const errorMsg = document.createElement('p');
-        errorMsg.style.color = '#FF3333';
-        errorMsg.style.fontSize = '14px';
-        errorMsg.style.display = 'none';
-        errorMsg.style.marginBottom = '16px';
-        errorMsg.style.textAlign = 'center';
-        
-        const submitBtn = document.querySelector('.auth-form__submit');
-        loginForm.insertBefore(errorMsg, submitBtn);
+        let errorMsg = document.querySelector('.auth-error-msg');
+        if (!errorMsg) {
+            errorMsg = document.createElement('p');
+            errorMsg.className = 'auth-error-msg';
+            errorMsg.style.color = '#FF3333';
+            errorMsg.style.fontSize = '14px';
+            errorMsg.style.display = 'none';
+            errorMsg.style.marginBottom = '16px';
+            errorMsg.style.textAlign = 'center';
+            
+            const submitBtn = document.querySelector('.auth-form__submit');
+            loginForm.insertBefore(errorMsg, submitBtn);
+        }
 
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            const emailInput = document.getElementById('email').value;
-            const passwordInput = document.getElementById('password').value;
+            const emailInput = document.getElementById('email').value.trim();
+            const passwordInput = document.getElementById('password').value.trim();
 
             if (emailInput === 'admin@example.com' && passwordInput === 'Admin@123') {
                 localStorage.setItem('authState', 'logged_in');
@@ -51,5 +56,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    
 });
