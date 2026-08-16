@@ -1,10 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const currentPath = window.location.pathname.toLowerCase();
     const isProtectedPage = currentPath.includes('product.html') || currentPath.includes('cart.html');
-    
     const isLoggedIn = localStorage.getItem('authState') === 'logged_in';
 
-    // 1. ROUTE GUARDING FOR PROTECTED PAGES
     if (isProtectedPage && !isLoggedIn) {
         window.location.href = 'login.html';
         return; 
