@@ -15,6 +15,7 @@ A fully responsive, feature-rich e-commerce frontend web application built with 
   * Individual item removal and dynamic subtotals.
   * Order summary calculation with delivery fees, discounts, and final totals.
   * Empty cart handling with a custom empty-state design.
+  * Cart state persistence using `localStorage`.
 
 * **Coupon Code Support:** 
   * Validates and applies active discounts (`SAVE10` for 10% off, `SAVE20` for 20% off).
@@ -27,9 +28,30 @@ A fully responsive, feature-rich e-commerce frontend web application built with 
 * **Mock Authentication & Route Guarding:**
   * Dedicated login screen mirroring the brand's aesthetic.
   * Protected route handling using JavaScript and `localStorage` (unauthenticated users attempting to access product or cart pages are automatically redirected to `login.html`).
-  * Dynamic header state toggling (switches the profile icon to a functional logout action when authenticated).
+  * **Logout Functionality:** Clicking the profile icon in the header while authenticated clears the authentication state from `localStorage` and redirects the user back to `login.html`.
+
 * **Responsive Design:** Completely adaptive layout across desktop, laptop, tablet, and mobile devices featuring a custom slide-out mobile menu drawer.
 
+---
+
+## 🔑 Login Credentials
+
+For testing and evaluation purposes, use the following hardcoded credentials on the Login Page (`login.html`):
+
+* **Email:** `admin@example.com`
+* **Password:** `Admin@123`
+
+---
+
+## 🎟️ Coupon Codes
+
+The following discount coupons can be applied on the Cart Page:
+
+* **SAVE10** → Provides a 10% discount on the cart subtotal.
+* **SAVE20** → Provides a 20% discount on the cart subtotal.
+* *Rule:* Only one coupon can be active at any given time; applying a new code automatically replaces the previous one.
+
+---
 
 ## 🛠️ Tech Stack & Architecture
 
