@@ -1,19 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const cartItemsContainer = document.getElementById('cart-items-container');
-    const cartEmptyState = document.getElementById('cart-empty-state');
+    const cartItemsContainer = document.querySelector('#cart-items-container');
+    const cartEmptyState = document.querySelector('#cart-empty-state');
     if (!cartItemsContainer) return;
 
     const orderSummary = document.querySelector('.order-summary');
-    const summarySubtotal = document.getElementById('summary-subtotal');
-    const summaryDiscountPercent = document.getElementById('summary-discount-percent');
-    const summaryDiscount = document.getElementById('summary-discount');
-    const summaryDelivery = document.getElementById('summary-delivery');
-    const summaryTotal = document.getElementById('summary-total');
+    const summarySubtotal = document.querySelector('#summary-subtotal');
+    const summaryDiscountPercent = document.querySelector('#summary-discount-percent');
+    const summaryDiscount = document.querySelector('#summary-discount');
+    const summaryDelivery = document.querySelector('#summary-delivery');
+    const summaryTotal = document.querySelector('#summary-total');
     
-    const promoInput = document.getElementById('promo-input');
-    const applyPromoBtn = document.getElementById('apply-promo-btn');
-    const promoMessage = document.getElementById('promo-message');
-    const checkoutBtn = document.getElementById('checkout-btn');
+    const promoInput = document.querySelector('#promo-input');
+    const applyPromoBtn = document.querySelector('#apply-promo-btn');
+    const promoMessage = document.querySelector('#promo-message');
+    const checkoutBtn = document.querySelector('#checkout-btn');
 
     const DELIVERY_FEE = 15.00;
     let cart = JSON.parse(localStorage.getItem('shopCart')) || [];
@@ -50,24 +50,24 @@ document.addEventListener('DOMContentLoaded', () => {
             cartItemsContainer.innerHTML += `
                 ${divider}
                 <article class="cart-item">
-                    <div class="cart-item__image-container" style="background:#F0EAED; border-radius:10px; width:120px; height:120px; display:flex; align-items:center; justify-content:center; overflow:hidden;">
-                        <img src="${item.image}" alt="${item.name}" style="width:100%; height:100%; object-fit:cover; mix-blend-mode:multiply;">
+                    <div class="cart-item__image-container">
+                        <img class="cart-item__image" src="${item.image}" alt="${item.name}">
                     </div>
                     <div class="cart-item__info">
                         <div class="cart-item__header">
                             <h3 class="cart-item__title">${item.name}</h3>
-                            <button class="cart-item__delete-btn" onclick="removeCartItem(${index})" style="background:none; border:none; cursor:pointer;">
+                            <button class="cart-item__delete-btn" onclick="removeCartItem(${index})">
                                 <img src="images/Delete-Dustbin.svg" alt="Delete">
                             </button>
                         </div>
-                        <p class="cart-item__meta" style="font-size:14px; margin:4px 0;">Size: <span style="color:rgba(0,0,0,0.6);">${item.size}</span></p>
-                        <p class="cart-item__meta" style="font-size:14px; margin:4px 0;">Color: <span style="color:rgba(0,0,0,0.6);">${item.color}</span></p>
-                        <div class="cart-item__footer" style="display:flex; justify-content:space-between; align-items:center; margin-top:16px;">
-                            <span class="cart-item__price" style="font-size:24px; font-weight:700;">$${item.price}</span>
-                            <div class="quantity quantity--small" style="display:flex; align-items:center; background:#F0F0F0; border-radius:62px; padding:8px 16px;">
-                                <button onclick="updateCartItem(${index}, -1)" style="background:none; border:none; font-size:18px; cursor:pointer;">-</button>
-                                <input type="number" value="${item.quantity}" readonly style="background:transparent; border:none; width:30px; text-align:center; font-weight:500;">
-                                <button onclick="updateCartItem(${index}, 1)" style="background:none; border:none; font-size:18px; cursor:pointer;">+</button>
+                        <p class="cart-item__meta">Size: <span class="cart-item__meta-value">${item.size}</span></p>
+                        <p class="cart-item__meta">Color: <span class="cart-item__meta-value">${item.color}</span></p>
+                        <div class="cart-item__footer">
+                            <span class="cart-item__price">$${item.price}</span>
+                            <div class="quantity quantity--small">
+                                <button class="quantity__btn" onclick="updateCartItem(${index}, -1)">-</button>
+                                <input class="quantity__input" type="number" value="${item.quantity}" readonly>
+                                <button class="quantity__btn" onclick="updateCartItem(${index}, 1)">+</button>
                             </div>
                         </div>
                     </div>
@@ -104,15 +104,15 @@ document.addEventListener('DOMContentLoaded', () => {
             if (code === 'SAVE10') {
                 currentDiscountPercent = 0.10;
                 activeCouponCode = code;
-                promoMessage.innerHTML = '<span style="color:#008000; font-size:14px;">10% Discount Applied!</span>';
+                promoMessage.innerHTML = '<span class="promo-msg promo-msg--success">10% Discount Applied!</span>';
             } else if (code === 'SAVE20') {
                 currentDiscountPercent = 0.20;
                 activeCouponCode = code;
-                promoMessage.innerHTML = '<span style="color:#008000; font-size:14px;">20% Discount Applied!</span>';
+                promoMessage.innerHTML = '<span class="promo-msg promo-msg--success">20% Discount Applied!</span>';
             } else {
                 currentDiscountPercent = 0;
                 activeCouponCode = null;
-                promoMessage.innerHTML = '<span style="color:#FF3333; font-size:14px;">Invalid coupon code.</span>';
+                promoMessage.innerHTML = '<span class="promo-msg promo-msg--error">Invalid coupon code.</span>';
             }
             calculateTotals();
         });
@@ -143,24 +143,22 @@ document.addEventListener('DOMContentLoaded', () => {
             if (cart.length === 0) return;
 
             const modal = document.createElement('div');
-            modal.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); display:flex; justify-content:center; align-items:center; z-index:9999;';
+            modal.className = 'modal';
             modal.innerHTML = `
-                <div style="background:#fff; padding:40px; border-radius:20px; text-align:center; max-width:400px; width:90%; box-shadow:0 10px 30px rgba(0,0,0,0.2);">
-                    <div style="background:#008000; color:white; width:64px; height:64px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:32px; font-weight:bold; margin:0 auto 24px;">✓</div>
-                    <h2 style="font-size:32px; font-weight:900; margin-bottom:16px;">Order Successful!</h2>
-                    <p style="color:rgba(0,0,0,0.6); margin-bottom:32px;">Your order has been placed successfully. Thank you!</p>
-                    <button id="closeModalBtn" style="background:#000; color:#fff; width:100%; padding:16px; border-radius:62px; font-weight:500; font-size:16px; border:none; cursor:pointer;">OK</button>
+                <div class="modal__content">
+                    <div class="modal__icon">✓</div>
+                    <h2 class="modal__title">Order Successful!</h2>
+                    <p class="modal__description">Your order has been placed successfully. Thank you!</p>
+                    <button class="modal__btn" id="closeModalBtn">OK</button>
                 </div>
             `;
             document.body.appendChild(modal);
-
-            document.getElementById('closeModalBtn').addEventListener('click', () => {
+            document.querySelector('#closeModalBtn').addEventListener('click', () => {
                 cart = []; 
                 localStorage.removeItem('shopCart'); 
                 window.location.href = 'index.html'; 
             });
         });
     }
-
     renderCart();
 });

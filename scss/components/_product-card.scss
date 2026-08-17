@@ -40,12 +40,8 @@
 
     &__stars {
         display: flex;
-        gap: rem(4);
-
-        img {
-            width: rem(16);
-            height: rem(16);
-        }
+        gap: rem(2);
+        font-size: rem(18);
     }
 
     &__score {
@@ -79,5 +75,31 @@
         font-weight: 500;
         padding: rem(6) rem(14);
         border-radius: $radius-pill;
+    }
+}
+
+.star--full {
+    color: $color-warning !important;
+}
+
+.star--empty {
+    color: $color-border !important;
+}
+
+.star--half {
+    position: relative;
+    display: inline-block;
+
+    .star__bg {
+        color: $color-border !important;
+    }
+
+    .star__fill {
+        color: $color-warning !important;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50%;
+        overflow: hidden;
     }
 }

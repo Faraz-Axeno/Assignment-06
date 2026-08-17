@@ -27,12 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let errorMsg = document.querySelector('.auth-error-msg');
         if (!errorMsg) {
             errorMsg = document.createElement('p');
-            errorMsg.className = 'auth-error-msg';
-            errorMsg.style.color = '#FF3333';
-            errorMsg.style.fontSize = '14px';
-            errorMsg.style.display = 'none';
-            errorMsg.style.marginBottom = '16px';
-            errorMsg.style.textAlign = 'center';
+            errorMsg.className = 'auth-error-msg is-hidden';
             
             const submitBtn = document.querySelector('.auth-form__submit');
             loginForm.insertBefore(errorMsg, submitBtn);
@@ -46,11 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (emailInput === 'admin@example.com' && passwordInput === 'Admin@123') {
                 localStorage.setItem('authState', 'logged_in');
-                errorMsg.style.display = 'none';
+                errorMsg.classList.add('is-hidden');
                 window.location.href = 'index.html';
             } else {
                 errorMsg.textContent = 'Invalid email or password. Please try again.';
-                errorMsg.style.display = 'block';
+                errorMsg.classList.remove('is-hidden');
             }
         });
     }

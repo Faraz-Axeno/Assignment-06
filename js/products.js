@@ -43,7 +43,6 @@ const products = [
         description: "Orange t-shirt with bold black stripes on the sleeves.",
         category: "New Arrivals"
     },
-
     {
         id: 5,
         name: "Vertical Striped Shirt",
@@ -100,35 +99,57 @@ function createProductCard(product) {
     let starsHtml = '';
     for (let i = 1; i <= 5; i++) {
         if (i <= Math.floor(product.rating)) {
-            starsHtml += '★';
+            starsHtml += '<span class="star star--full">★</span>';
         } else if (i === Math.ceil(product.rating) && !Number.isInteger(product.rating)) {
-            starsHtml += '★';
+            starsHtml += `<span class="star star--half">
+                            <span class="star__bg">★</span>
+                            <span class="star__fill">★</span>
+                          </span>`;
         } else {
-            starsHtml += '☆';
+            starsHtml += '<span class="star star--empty">★</span>';
         }
     }
 
+    const displayRating = Number.isInteger(product.rating) ? product.rating : product.rating.toFixed(1);
+
     return `
-        <article class="product-card" onclick="window.location.href='product.html?id=${product.id}'" style="cursor: pointer;">
-            <div class="product-card__image-container" style="background:#F0EEED; border-radius:20px; padding:20px; margin-bottom:16px; aspect-ratio: 1/1; display:flex; justify-content:center; align-items:center; overflow:hidden;">
-                <img class="product-card__image" src="${product.image}" alt="${product.name}" style="width:100%; height:100%; object-fit:contain; mix-blend-mode:multiply;">
+        <article class="product-card" onclick="window.location.href='product.html?id=${product.id}'">
+            <div class="product-card__image-container">
+                <img class="product-card__image" src="${product.image}" alt="${product.name}">
             </div>
             <div class="product-card__content">
-                <h3 class="product-card__title" style="margin: 0 0 8px 0; font-size:20px; font-weight:700; color:#000;">${product.name}</h3>
+                <h3 class="product-card__title">${product.name}</h3>
                 
-                <div class="product-card__rating" style="display:flex; align-items:center; gap:8px; margin-bottom: 8px;">
-                    <span style="color:#FFC633; font-size:18px; letter-spacing: 2px;">${starsHtml}</span>
-                    <span style="font-size:14px; color:rgba(0,0,0,0.6);">${product.rating.toFixed(1)}/5</span>
+                <div class="product-card__rating">
+                    <div class="product-card__stars">
+                        ${starsHtml}
+                    </div>
+                    <span class="product-card__rating-text">${displayRating}/5</span>
                 </div>
 
-                <div class="product-card__price-row" style="display:flex; align-items:center; gap:12px;">
-                    <span class="product-card__price" style="font-size:24px; font-weight:700; color:#000;">$${product.price}</span>
+                <div class="product-card__price-row">
+                    <span class="product-card__price">$${product.price}</span>
                     ${hasDiscount ? `
-                        <span class="product-card__original-price" style="font-size:24px; font-weight:700; color:rgba(0,0,0,0.3); text-decoration:line-through;">$${product.originalPrice}</span>
-                        <span class="product-card__discount" style="background:#FF33331A; color:#FF3333; padding:4px 12px; border-radius:62px; font-size:12px; font-weight:500;">${badgeText}</span>
+                        <span class="product-card__original-price">$${product.originalPrice}</span>
+                        <span class="product-card__discount">${badgeText}</span>
                     ` : ''}
                 </div>
             </div>
         </article>
     `;
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const newArrivalsGrid = document.querySelector('.new-arrivals-section .product-grid');
+    const topSellingGrid = document.querySelector('.top-selling-section .product-grid');
+
+    if (newArrivalsGrid) {
+        const newArrivals = products.filter(product => product.category === 'New Arrivals');
+        newArrivalsGrid.innerHTML = newArrivals.map(product => createProductCard(product)).join('');
+    }
+
+    if (topSellingGrid) {
+        const topSelling = products.filter(product => product.category === 'Top Selling');
+        topSellingGrid.innerHTML = topSelling.map(product => createProductCard(product)).join('');
+    }
+});
