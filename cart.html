@@ -20,7 +20,7 @@
 
         <div class="header__navbar">
             <button class="header__hamburger" id="hamburger-btn" aria-label="Open navigation menu">
-                <img src="images/Hamurger.svg" alt="Menu">
+                <img src="images/Hamurger.svg" alt="Menu" class="header__hamburger-icon">
             </button>
 
             <a href="index.html" class="header__logo">SHOP.CO</a>
@@ -39,10 +39,10 @@
 
             <div class="header__actions">
                 <button class="header__action-btn header__action-btn--search-mobile" aria-label="Search">
-                    <img src="images/search.svg" alt="Search">
+                    <img src="images/search.svg" alt="Search" class="header__action-search-icon">
                 </button>
-                <a href="cart.html" class="header__action-btn" aria-label="Cart"><img src="images/cart.svg" alt="Cart"></a>
-                <a href="login.html" class="header__action-btn" aria-label="Profile"><img src="images/profile.svg" alt="Profile"></a>
+                <a href="cart.html" class="header__action-btn" aria-label="Cart"><img src="images/cart.svg" alt="Cart" class="header__action-cart-icon"></a>
+                <a href="login.html" class="header__action-btn" aria-label="Profile"><img src="images/profile.svg" alt="Profile" class="header__action-profile-icon"></a>
             </div>
         </div>
     </header>
@@ -140,7 +140,7 @@
                         </div>
 
                         <div class="cart__empty-state" id="cart-empty-state">
-                            <p>Your cart is currently empty.</p>
+                            <p class="cart__empty-text">Your cart is currently empty.</p>
                             <a href="index.html" class="cart__continue-btn">Continue Shopping</a>
                         </div>
                     </div>
@@ -154,7 +154,7 @@
                         </div>
                         
                         <div class="order-summary__row">
-                            <span class="order-summary__label">Discount <span id="summary-discount-percent">(-20%)</span></span>
+                            <span class="order-summary__label">Discount <span class="order-summary__discount-percent" id="summary-discount-percent">(-20%)</span></span>
                             <span class="order-summary__value order-summary__value--danger" id="summary-discount">-$113</span>
                         </div>
                         
@@ -207,10 +207,10 @@
                 <h3 class="footer__logo">SHOP.CO</h3>
                 <p class="footer__desc">We have clothes that suits your style and which you're proud to wear. From women to men.</p>
                 <div class="social-links">
-                    <a href="#" class="social-links__item"><img src="images/twitter.svg" alt="Twitter"></a>
-                    <a href="#" class="social-links__item"><img src="images/facebook.svg" alt="Facebook"></a>
-                    <a href="#" class="social-links__item"><img src="images/instagram.svg" alt="Instagram"></a>
-                    <a href="#" class="social-links__item"><img src="images/github.svg" alt="Github"></a>
+                    <a href="#" class="social-links__item"><img src="images/twitter.svg" alt="Twitter" class="social-links__icon"></a>
+                    <a href="#" class="social-links__item"><img src="images/facebook.svg" alt="Facebook" class="social-links__icon"></a>
+                    <a href="#" class="social-links__item"><img src="images/instagram.svg" alt="Instagram" class="social-links__icon"></a>
+                    <a href="#" class="social-links__item"><img src="images/github.svg" alt="Github" class="social-links__icon"></a>
                 </div>
             </div>
 
@@ -256,7 +256,7 @@
         </div>
 
         <div class="footer__bottom">
-            <p class="footer__copyright">Shop.co © 2000-2023, All Rights Reserved</p>
+            <p class="footer__copyright">Shop.co © 2000-2026, All Rights Reserved</p>
             <div class="payment-methods">
                 <img src="images/Visa.svg" alt="Visa" class="payment-methods__icon">
                 <img src="images/mastercard.svg" alt="Mastercard" class="payment-methods__icon">

@@ -102,7 +102,7 @@ function createProductCard(product) {
             starsHtml += '<span class="star star--full">★</span>';
         } else if (i === Math.ceil(product.rating) && !Number.isInteger(product.rating)) {
             starsHtml += `<span class="star star--half">
-                            <span class="star__bg">★</span>
+                            <span class="star__bg">⯪</span>
                             <span class="star__fill">★</span>
                           </span>`;
         } else {

@@ -1,22 +1,22 @@
-@import 'abstracts/variables';
-@import 'abstracts/mixins';
-@import 'abstracts/functions';
+@use 'abstracts/variables';
+@use 'abstracts/mixins';
+@use 'abstracts/functions';
 
-@import 'base/reset';
-@import 'base/typography';
-@import 'base/global';
+@use 'base/reset';
+@use 'base/typography';
+@use 'base/global';
 
-@import 'layout/container';
-@import 'layout/header';
-@import 'layout/footer';
+@use 'layout/container';
+@use 'layout/header';
+@use 'layout/footer';
 
-@import 'components/button';
-@import 'components/product-card';
-@import 'components/cart-item';
-@import 'components/modal';
-@import 'components/form';
+@use 'components/button';
+@use 'components/product-card';
+@use 'components/cart-item';
+@use 'components/modal';
+@use 'components/form';
 
-@import 'pages/home';
-@import 'pages/product';
-@import 'pages/cart';
-@import 'pages/login';
+@use 'pages/home';
+@use 'pages/product';
+@use 'pages/cart';
+@use 'pages/login';

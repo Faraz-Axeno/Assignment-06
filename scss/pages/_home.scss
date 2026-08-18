@@ -1,12 +1,15 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
 html, body {
-    overflow-x: hidden; 
+    overflow-x: hidden;
     max-width: 100%;
-    margin: 0; 
+    margin: 0;
     padding: 0;
 }
 
 *, *::before, *::after {
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 .top-banner {
@@ -20,7 +23,7 @@ html, body {
     font-size: rem(14);
     line-height: 1.2;
 
-    p {
+    .Topbanner-p {
         margin: 0;
         display: flex;
         align-items: center;
@@ -29,17 +32,17 @@ html, body {
         gap: rem(8);
     }
 
-    .signup-link {
+    .top-banner__link {
         color: #FFFFFF;
         text-decoration: underline;
         font-weight: 500;
-        
+
         &:hover {
             color: #CCCCCC;
         }
     }
 
-    .close-btn {
+    .top-banner__close {
         position: absolute;
         right: rem(20);
         background: none;
@@ -54,22 +57,26 @@ html, body {
         &:hover {
             opacity: 0.7;
         }
+
+        .top-banner__icon {
+            display: block;
+        }
     }
 }
 
 .home-hero {
-    background-color: #F2F0F1; 
+    background-color: #F2F0F1;
     position: relative;
     overflow: hidden;
-    height: rem(663); 
+    height: rem(663);
 
     .hero-container {
-        max-width: rem(1240); 
-        margin: 0 auto; 
-        padding: 0 rem(20); 
+        max-width: rem(1240);
+        margin: 0 auto;
+        padding: 0 rem(20);
         display: grid;
-        grid-template-columns: 1fr 1fr; 
-        height: 100%; 
+        grid-template-columns: 1fr 1fr;
+        height: 100%;
         position: relative;
     }
 
@@ -77,12 +84,12 @@ html, body {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        padding-top: rem(103); 
+        padding-top: rem(103);
         height: 100%;
-        min-height: 0; 
+        min-height: 0;
         z-index: 2;
-        
-        h1 {
+
+        .hero-main-title {
             font-size: rem(64);
             line-height: 1;
             font-weight: 900;
@@ -92,8 +99,8 @@ html, body {
             max-width: rem(577);
         }
 
-        p {
-            max-width: rem(545); 
+        .hero-text {
+            max-width: rem(545);
             color: rgba(0, 0, 0, 0.6);
             font-size: rem(16);
             line-height: rem(22);
@@ -102,8 +109,8 @@ html, body {
     }
 
     .hero-btn {
-        width: rem(210); 
-        height: rem(52); 
+        width: rem(210);
+        height: rem(52);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -114,6 +121,8 @@ html, body {
         text-decoration: none;
         font-weight: 500;
         transition: transform 0.2s;
+        border: none;
+        cursor: pointer;
 
         &:hover {
             transform: scale(0.98);
@@ -131,8 +140,8 @@ html, body {
             display: flex;
             flex-direction: column;
             flex: 1;
-            padding: 0 rem(24); 
-            
+            padding: 0 rem(24);
+
             &:not(:last-child) {
                 border-right: 1px solid rgba(0, 0, 0, 0.1);
             }
@@ -164,62 +173,62 @@ html, body {
 
     .hero-content-right {
         display: flex;
-        align-items: flex-end; 
+        align-items: flex-end;
         justify-content: center;
         height: 100%;
         width: 100%;
-        min-height: 0; 
+        min-height: 0;
         position: relative;
         z-index: 1;
     }
 
     .hero-image {
         max-width: 100%;
-        max-height: 100%; 
+        max-height: 100%;
         width: auto;
         height: auto;
         display: block;
         object-fit: contain;
-        object-position: bottom center; 
+        object-position: bottom center;
     }
 }
 
 .star-icon {
     position: absolute;
-    z-index: 3; 
+    z-index: 3;
 
     &.star-large {
-        width: rem(104); 
-        height: rem(104); 
+        width: rem(104);
+        height: rem(104);
         top: rem(80);
-        right: 0; 
+        right: 0;
     }
 
     &.star-small {
-        width: rem(56); 
-        height: rem(56); 
+        width: rem(56);
+        height: rem(56);
         top: 45%;
         left: 50%;
-        transform: translateX(-50%); 
+        transform: translateX(-50%);
     }
 }
 
 .Brands-Name {
     background-color: #000000;
     width: 100%;
-    
+
     .Name {
         max-width: rem(1240);
         margin: 0 auto;
-        padding: rem(40) rem(20); 
+        padding: rem(40) rem(20);
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
         gap: rem(20);
-        
-        img {
-            max-height: rem(33); 
+
+        .brand-logo {
+            max-height: rem(33);
             width: auto;
             object-fit: contain;
         }
@@ -247,7 +256,7 @@ html, body {
         display: flex;
         justify-content: center;
         margin-top: rem(36);
-        
+
         .btn-primary {
             width: rem(218);
             height: rem(52);
@@ -260,7 +269,8 @@ html, body {
             border-radius: rem(62);
             text-decoration: none;
             font-weight: 500;
-            
+            cursor: pointer;
+
             &:hover {
                 background-color: #F0F0F0;
             }
@@ -286,7 +296,7 @@ html, body {
             background: transparent !important;
             background-color: transparent !important;
             padding: 0 !important;
-            border-radius: rem(20) !important; 
+            border-radius: rem(20) !important;
             overflow: hidden !important;
             margin-bottom: rem(16) !important;
             width: 100% !important;
@@ -310,7 +320,7 @@ html, body {
 
 .dress-style {
     max-width: rem(1240);
-    margin: rem(80) auto; 
+    margin: rem(80) auto;
     padding: 0 rem(20);
     box-sizing: border-box;
 
@@ -333,7 +343,7 @@ html, body {
 
     &__grid {
         display: grid;
-        grid-template-columns: repeat(12, 1fr); 
+        grid-template-columns: repeat(12, 1fr);
         gap: rem(20);
         width: 100%;
     }
@@ -341,12 +351,12 @@ html, body {
 
 .style-card {
     position: relative;
-    background-color: #FFFFFF; 
+    background-color: #FFFFFF;
     border-radius: rem(20);
     text-decoration: none;
-    overflow: hidden; 
+    overflow: hidden;
     display: block;
-    height: rem(289); 
+    height: rem(289);
     box-sizing: border-box;
     transition: transform 0.2s;
     font-size: 0;
@@ -362,8 +372,8 @@ html, body {
         left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover; 
-        object-position: center; 
+        object-fit: cover;
+        object-position: center;
     }
 
     &--casual { grid-column: span 4; }
@@ -418,17 +428,18 @@ html, body {
 
         &:hover { opacity: 0.6; }
 
-        img {
-            width: rem(24); 
+        .testimonials__arrow-icon {
+            width: rem(24);
             height: rem(24);
             object-fit: contain;
+            display: block;
         }
     }
 
     &__carousel {
         max-width: rem(1240);
         margin: 0 auto;
-        padding: 0 rem(20); 
+        padding: 0 rem(20);
         position: relative;
         box-sizing: border-box;
     }
@@ -443,10 +454,10 @@ html, body {
 
     &__card {
         width: 100%;
-        min-height: rem(240);   
+        min-height: rem(240);
         height: auto;
         box-sizing: border-box;
-        margin: 0; 
+        margin: 0;
     }
 }
 
@@ -484,6 +495,7 @@ html, body {
     &__verified-icon {
         width: rem(18);
         height: rem(18);
+        display: block;
     }
 
     &__text {
@@ -497,37 +509,37 @@ html, body {
 @media (max-width: 768px) {
     .top-banner {
         font-size: rem(12);
-        padding: rem(10) rem(16); 
+        padding: rem(10) rem(16);
     }
 
     .home-hero {
         position: relative;
-        height: auto; 
+        height: auto;
         padding-bottom: 0;
 
         .hero-container {
-            grid-template-columns: 1fr; 
-            padding: rem(24) rem(16) 0 rem(16); 
+            grid-template-columns: 1fr;
+            padding: rem(24) rem(16) 0 rem(16);
         }
 
         .hero-content-left {
             padding-top: 0;
-            
-            h1 {
-                font-size: rem(36); 
+
+            .hero-main-title {
+                font-size: rem(36);
                 line-height: 1.1;
                 margin-bottom: rem(20);
             }
 
-            p { 
-                font-size: rem(14); 
+            .hero-text {
+                font-size: rem(14);
                 line-height: rem(20);
                 margin-bottom: rem(24);
             }
         }
 
-        .hero-btn { 
-            width: 100%; 
+        .hero-btn {
+            width: 100%;
             height: rem(52);
             margin-bottom: rem(32);
         }
@@ -537,22 +549,22 @@ html, body {
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            width: 100%; 
+            width: 100%;
             row-gap: rem(24);
-            column-gap: 0; 
-            
+            column-gap: 0;
+
             .stat-item {
                 flex: 0 0 50%;
                 align-items: center;
                 text-align: center;
-                padding: 0; 
+                padding: 0;
 
                 &::after { display: none !important; }
-                
+
                 &:nth-child(1) {
                     border-right: 1px solid rgba(0, 0, 0, 0.1);
                 }
-                
+
                 &:nth-child(3) {
                     flex: 0 0 100%;
                     border-right: none;
@@ -564,9 +576,9 @@ html, body {
         }
 
         .hero-content-right {
-            width: 100%; 
-            height: rem(400); 
-            overflow: hidden; 
+            width: 100%;
+            height: rem(400);
+            overflow: hidden;
             margin-top: rem(24);
             padding: 0;
             position: relative;
@@ -575,29 +587,29 @@ html, body {
         .hero-image {
             width: 100%;
             height: 100%;
-            object-fit: cover; 
-            object-position: center top; 
-            transform: scale(1.18); 
-            transform-origin: top center; 
+            object-fit: cover;
+            object-position: center top;
+            transform: scale(1.18);
+            transform-origin: top center;
         }
 
         .star-large {
-            width: rem(76) !important; 
-            height: rem(76) !important; 
-            top: auto !important; 
-            bottom: rem(240) !important; 
-            right: rem(36) !important; 
-            left: auto !important; 
+            width: rem(76) !important;
+            height: rem(76) !important;
+            top: auto !important;
+            bottom: rem(240) !important;
+            right: rem(36) !important;
+            left: auto !important;
             transform: none !important;
             z-index: 3;
         }
-        
+
         .star-small {
-            width: rem(44) !important; 
-            height: rem(44) !important; 
-            top: auto !important; 
-            bottom: rem(160) !important; 
-            left: rem(46) !important; 
+            width: rem(44) !important;
+            height: rem(44) !important;
+            top: auto !important;
+            bottom: rem(160) !important;
+            left: rem(46) !important;
             right: auto !important;
             transform: none !important;
             z-index: 3;
@@ -612,54 +624,54 @@ html, body {
             align-items: center;
             gap: rem(20) rem(24);
             padding: rem(24) rem(16);
-            
-            img { max-height: rem(24); }
+
+            .brand-logo { max-height: rem(24); }
         }
     }
 
     .new-arrivals-section,
     .top-selling-section {
-        .header__container { 
-            padding: rem(40) 0; 
-            overflow: hidden; 
+        .header__container {
+            padding: rem(40) 0;
+            overflow: hidden;
         }
-        
-        .section-title { 
-            font-size: rem(32); 
-            margin-bottom: rem(24); 
+
+        .section-title {
+            font-size: rem(32);
+            margin-bottom: rem(24);
         }
-        
+
         .button-container {
             margin-top: rem(24);
             padding: 0 rem(16);
-            .btn-primary { 
-                width: 100%; 
+            .btn-primary {
+                width: 100%;
                 height: rem(46);
             }
         }
     }
 
-      .product-grid {
-        display: flex !important; 
+    .product-grid {
+        display: flex !important;
         grid-template-columns: unset !important;
-        width: 100% !important; 
-        gap: rem(16) !important; 
-        margin: 0 !important; 
+        width: 100% !important;
+        gap: rem(16) !important;
+        margin: 0 !important;
         padding: 0 rem(16) !important;
-        overflow-x: auto !important; 
+        overflow-x: auto !important;
         scroll-snap-type: x mandatory;
         box-sizing: border-box !important;
-        
+
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         &::-webkit-scrollbar { display: none; }
 
         > * {
-            flex: 0 0 calc(50% - 8px) !important; 
+            flex: 0 0 calc(50% - 8px) !important;
             width: calc(50% - 8px) !important;
-            background: transparent !important; 
-            background-color: transparent !important; 
-            padding: 0 !important; 
+            background: transparent !important;
+            background-color: transparent !important;
+            padding: 0 !important;
             border: none !important;
             box-shadow: none !important;
             display: flex !important;
@@ -667,26 +679,26 @@ html, body {
             scroll-snap-align: start;
 
             > div:first-child, .image-wrapper, .product-image {
-                background: transparent !important; 
-                background-color: transparent !important; 
+                background: transparent !important;
+                background-color: transparent !important;
                 padding: 0 !important;
-                border-radius: rem(20) !important; 
+                border-radius: rem(20) !important;
                 overflow: hidden !important;
                 margin-bottom: rem(12) !important;
-                aspect-ratio: 198 / 200 !important; 
+                aspect-ratio: 198 / 200 !important;
                 width: 100% !important;
 
                 img {
                     width: 100% !important;
                     height: 100% !important;
-                    object-fit: cover !important; 
+                    object-fit: cover !important;
                 }
             }
         }
     }
 
     .dress-style {
-        margin: rem(40) auto; 
+        margin: rem(40) auto;
         padding: 0 rem(16);
 
         &__container {
@@ -708,49 +720,49 @@ html, body {
     }
 
     .style-card {
-        height: rem(190); 
+        height: rem(190);
         width: 100%;
         grid-column: unset;
 
-        img {
+        .style-card__image {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: left center; 
+            object-position: left center;
         }
 
-        &--casual img,
-        &--gym img {
-            object-position: left top; 
+        &--casual .style-card__image,
+        &--gym .style-card__image {
+            object-position: left top;
         }
 
-        &--formal img,
-        &--party img {
-            transform: scale(1.4); 
-            transform-origin: left 15%; 
+        &--formal .style-card__image,
+        &--party .style-card__image {
+            transform: scale(1.4);
+            transform-origin: left 15%;
         }
     }
 
     .testimonials {
-        margin: rem(40) 0 rem(200) 0; 
-        
+        margin: rem(40) 0 rem(200) 0;
+
         &__container {
             padding: 0 rem(16);
         }
 
-        &__header { 
+        &__header {
             align-items: flex-end;
-            margin-bottom: rem(24); 
+            margin-bottom: rem(24);
         }
-        
-        &__title { 
-            font-size: rem(32); 
+
+        &__title {
+            font-size: rem(32);
         }
 
         &__nav {
             display: none;
         }
-        
+
         &__carousel {
             padding: 0;
             width: 100%;
@@ -759,18 +771,18 @@ html, body {
 
         &__grid {
             display: flex;
-            width: 100%; 
+            width: 100%;
             margin-left: 0;
             padding: 0;
-            overflow-x: auto; 
+            overflow-x: auto;
             scroll-snap-type: x mandatory;
             gap: rem(16);
-            
+
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
             &::-webkit-scrollbar { display: none; }
         }
-        
+
         &__card {
             flex: 0 0 100%;
             height: auto;
